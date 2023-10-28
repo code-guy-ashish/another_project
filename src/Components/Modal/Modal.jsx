@@ -1,0 +1,15 @@
+import './Modal.css'
+
+const Modal = (props) => {
+    return (
+        <div data-testid="modalid" className='modal'
+            onClick={() => (props.onClose ? props.onClose() : "")}>
+            <div className="modal_content custom-scroll"
+                onClick={(event) => event.stopPropagation()}>
+                {props.children}
+            </div>
+        </div>
+    )
+}
+
+export default Modal

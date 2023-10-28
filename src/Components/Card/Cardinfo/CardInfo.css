@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+.cardinfocc {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .cardtitlecc {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .card_desc_infoplatecc{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    height: fit-content;
+    border: 1px gray solid;
+    border-radius: 10px;
+    max-height: 25vh;
+    overflow-y: auto;
+  }
+
+  .edit_formcc,.cardinfocc{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px;
+    gap: 6vh;
+    width: 30vw;
+  }
+  
+  .textareacc{
+    resize: none;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  .buttoncc{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 2px 0 1px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .buttoncc:hover{
+    scale: 1.01 ;
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px rgba(48, 164, 253, 0.502);
+  }
+  .buttoncc:active{
+    background-color: rgb(48, 164, 253);
+  }
+
+  .inputcc{
+    width: 100%;
+    height: 6vh;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  .titlecc{
+    font-family: 'Poppins', sans-serif;
+    font-size: 6vh;
+  }
+
+
+  @media screen and (max-width: 500px) {
+      .cardinfocc{
+        height: fit-content;
+        width: fit-content;
+        padding-left: 20px;
+      }
+
+      .edit_formcc{
+        height: fit-content;
+        width: fit-content;
+      }
+
+
+  }
