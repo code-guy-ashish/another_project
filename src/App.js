@@ -14,7 +14,7 @@ function App() {
   });
 
   useEffect(() => {
-    const local_boards = JSON.parse(localStorage.getItem("boards"));
+    const local_boards = JSON.parse(localStorage.getItem("boards")?localStorage.getItem("boards"):"[]");
     if (local_boards?.length !== 0) {
       setBoards(local_boards);
     }
@@ -22,7 +22,7 @@ function App() {
 
 
   useEffect(() => {
-    localStorage.setItem("boards", JSON.stringify(boards));
+    localStorage.setItem("boards", boards.length!==0?JSON.stringify(boards):"[]");
   }, [boards])
 
 
@@ -83,7 +83,7 @@ function App() {
     tempBoards[b_index].cards[c_index].title = title;
     tempBoards[b_index].cards[c_index].labels = labels;
     labels.forEach((e) => {
-        tempBoards[b_index].cards[c_index].label_colors.push(colors[Math.floor(Math.random() * colors.length)]);
+      tempBoards[b_index].cards[c_index].label_colors.push(colors[Math.floor(Math.random() * colors.length)]);
     })
     tempBoards[b_index].cards[c_index].real_desc = descc;
     tempBoards[b_index].cards[c_index].desc = desc_shorthand(descc);
@@ -92,6 +92,8 @@ function App() {
   }
 
   const handleDragEnter = (cid, bid) => {
+    console.log("DragEnter has been Triggered");
+    console.log(`Target Board Id: ${bid}, Target Card Id: ${cid}`);
     setTarget({
       cid,
       bid,
@@ -100,6 +102,10 @@ function App() {
 
   const handleDragEnd = (cid, bid) => {
     let s_bIndex, s_cIndex, t_bIndex, t_cIndex;
+
+    console.log("DragEnd has been Triggered and the values triggerd via it are: ");
+    console.log(`Source Board Id: ${bid}, Source Card Id: ${cid}`);
+
 
     s_bIndex = boards.findIndex(item => item.id === bid);
     if (s_bIndex < 0) return;
@@ -162,7 +168,9 @@ function App() {
             <Editable
               text="Add New State"
               placeholder="Enter State Title"
-              onSubmit={(value) => addBoard(value)} />
+              onSubmit={(value) => {
+                addBoard(value)
+              }} />
           </div>
         </div>
       </div>

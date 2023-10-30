@@ -8,7 +8,7 @@ const Card = (props) => {
 
   const [showModal, setShowModal] = useState(false)
   return (
-    
+
     <div data-testid="cardid">
       {showModal && <CardInfo
         onClose={() => setShowModal(false)}
@@ -23,8 +23,11 @@ const Card = (props) => {
       <div className="card" draggable
         onDragEnd={(e) => props.handleDragEnd(props.card?.id, props.boardId)
         }
+        // onTouchStart={(e) => props.handleDragEnd(props.card?.id, props.boardId)}
         onDragEnter={(e) => props.handleDragEnter(props.card?.id, props.boardId)
         }
+        // onTouchEnd={(e) => props.handleDragEnter(props.card?.id, props.boardId)
+        // }
         onClick={() => setShowModal(true)}
       >
 

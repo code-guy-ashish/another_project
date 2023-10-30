@@ -36,6 +36,7 @@ const Editable = (props) => {
                             setCardInput(false);
                         }}>
                         <input
+                            id={`main_input${Date.now()+Math.random()*2}`}
                             autoFocus
                             type="text"
                             value={inputValue}
@@ -46,11 +47,13 @@ const Editable = (props) => {
                         {
                             showCardInput ? <>
                                 <textarea className="editable_add_card custom-scroll"
+                                    id={`desc_input${Date.now()+Math.random()*2}`}
                                     value={inputDesc}
                                     onChange={(e) => setDescValue(e.target.value)}
                                     placeholder="Enter Description" />
 
                                 <input type="text"
+                                    id={`label_input${Date.now()+Math.random()*2}`}
                                     value={inputLabel}
                                     onChange={(e) => setLabelValue(e.target.value)}
                                     placeholder="Enter labels" />
