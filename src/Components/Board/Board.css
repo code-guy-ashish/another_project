@@ -57,14 +57,13 @@ span{
     .board_cards{
         display: flex;
         flex-direction: row;
-        /* background-color: green; */
         overflow-x: auto;
-        /* border: 2px black solid; */
     }
     .board{
         height: fit-content;
-        width: 25%;
+        width: 370px;
         overflow-x:scroll ;
+
 
     }
 }

@@ -20,14 +20,13 @@ const Card = (props) => {
         boardId={props.boardId}
         editcard={props.editcard}
       />}
-      <div className="card" draggable
+      <div className="card" draggable 
         onDragEnd={(e) => props.handleDragEnd(props.card?.id, props.boardId)
         }
-        // onTouchStart={(e) => props.handleDragEnd(props.card?.id, props.boardId)}
+        onTouchStart={(e) =>console.log(e)}
         onDragEnter={(e) => props.handleDragEnter(props.card?.id, props.boardId)
         }
-        // onTouchEnd={(e) => props.handleDragEnter(props.card?.id, props.boardId)
-        // }
+        onTouchEnd={(e) => console.log(e)}
         onClick={() => setShowModal(true)}
       >
 

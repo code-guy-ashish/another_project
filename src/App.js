@@ -148,7 +148,7 @@ function App() {
       <div className="app_navbar">
         <h2>Kanban Board</h2>
       </div>
-      <div className="app_outer">
+      <div className="app_outer custom-scroll">
         <div className="app_boards">
           {
             boards?.map((item) => {
